@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+
+    {% if msg %}
+    <h1>{{ msg }}</h1>
+    {% endif %}
+    
+    <h1>Upload new File</h1>
+    
+    <form method=post enctype=multipart/form-data>
+	<dl> 
+      <p><input type=file name="file" multiple> <br><br>
+	  </dl> 
+         <input type=submit value=Upload>
+    </form>
+
+    <h1>Extract Text from Image</h1>
+    <ol type="1">
+     {% for image_list, image_file_list in image_info %}  
+	 
+	 
+        <h2>  {{ image_file_list }} </h2>  <br>   
+    
+       <li> <p>  <b> {{ image_list }} </b></p> </li> <br>   
+	 {% endfor %}   
+	 </ol>	 
+  </body>
+</html>
